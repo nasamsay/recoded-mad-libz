@@ -74,16 +74,16 @@ function editStory(obj){
   const editText = document.querySelector('div.madLibsEdit')
   for(i=0; i<obj.length; i++){
     if(obj[i].pos == 'verb'){
-      editText.innerHTML= editText.innerHTML+'<input type="text"></input>'+'[v]'
+      editText.innerHTML= editText.innerHTML+'<input type="text" id="input"></input>'+'[v]'
     }
     else if(obj[i].pos == 'noun'){
-      editText.innerHTML= editText.innerHTML+'<input type="text"></input>'+'[n]'
+      editText.innerHTML= editText.innerHTML+'<input type="text" id="input"></input>'+'[n]'
     }
     else if(obj[i].pos == 'adjective'){
-      editText.innerHTML= editText.innerHTML+'<input type="text"></input>'+'[a]'
+      editText.innerHTML= editText.innerHTML+'<input type="text" id="input"></input>'+'[a]'
     }
     else{
-      editText.innerHTML = editText.innerHTML+obj['word']
+      editText.innerHTML = editText.innerHTML+" "+obj[i]['word']
     }
   }
 }
@@ -92,5 +92,5 @@ function editStory(obj){
 getRawStory()
   .then(parseStory)
   .then((processedStory) => {
-    console.log(processedStory);
+    editStory(processedStory);
   });
