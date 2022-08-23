@@ -74,21 +74,33 @@ function editStory(obj){
   const editText = document.querySelector('div.madLibsEdit')
   for(i=0; i<obj.length; i++){
     if(obj[i].pos == 'verb'){
-      editText.innerHTML= editText.innerHTML+'<input type="text" id="input"></input>'+'[v]'
+      editText.innerHTML= editText.innerHTML+" "+'<input type="text" id="input"></input>'+'[v]'
     }
     else if(obj[i].pos == 'noun'){
-      editText.innerHTML= editText.innerHTML+'<input type="text" id="input"></input>'+'[n]'
+      editText.innerHTML= editText.innerHTML+" "+'<input type="text" id="input"></input>'+'[n]'
     }
     else if(obj[i].pos == 'adjective'){
-      editText.innerHTML= editText.innerHTML+'<input type="text" id="input"></input>'+'[a]'
+      editText.innerHTML= editText.innerHTML+" "+'<input type="text" id="input"></input>'+'[a]'
     }
     else{
       editText.innerHTML = editText.innerHTML+" "+obj[i]['word']
     }
   }
+  editText.addEventListener('click', (e)=>{
+    if(e.target.id == 'input'){
+      e.target.style.background='#eee'
+    }
+  })
+  editText.addEventListener('keypress', (e)=>{
+
+  })
+}
+
+
+function previewStory(obj){
+  const preview = document.querySelector('div.madLibsPreview')
 }
  
- //const preview = document.querySelector('div.madLibsPreview')
 getRawStory()
   .then(parseStory)
   .then((processedStory) => {

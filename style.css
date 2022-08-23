@@ -1,3 +1,18 @@
-/**
- * Your CSS goes here.
- */
+body{
+    background: rgb(244, 196, 225);
+    font-size:24px;
+    font-family:'Poppins';
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+h4{
+    margin:50px;
+}
+#input{
+    border-radius: 5px;
+    text-align:center;
+}
